@@ -1,1 +1,5 @@
-/home/vasco/.config/alacritty/alacritty.yml
+import:
+   - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
+
+
+
