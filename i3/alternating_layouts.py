@@ -1,0 +1,1 @@
+/home/vasco/.config/i3/alternating_layouts.py
