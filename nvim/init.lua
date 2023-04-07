@@ -22,6 +22,7 @@ vim.opt.swapfile = false
 
 vim.keymap.set('n', '<C-n>', ':bnext<cr>')
 vim.keymap.set('n', '<C-p>', ':bprevious<cr>')
+vim.keymap.set('n', '<leader>b', ':bdelete<cr>')
 vim.keymap.set('n', '<leader>n', ":SFMToggle<cr>")
 vim.keymap.set('n', '<Tab>', '>>')
 vim.keymap.set('n', '<S-Tab>', '<<')
@@ -36,12 +37,21 @@ vim.keymap.set('n', 'H', '^')
 vim.keymap.set('n', 'L', '$')
 vim.keymap.set('n', '<C-f>', '<C-f>zz')
 vim.keymap.set('n', '<C-b>', '<C-b>zz')
--- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set('i', '<C-h>', '<C-o>h')
+vim.keymap.set('i', '<C-j>', '<C-o>j')
+vim.keymap.set('i', '<C-k>', '<C-o>k')
+vim.keymap.set('i', '<C-l>', '<C-o>l')
+vim.keymap.set('i', '<C-w>', '<C-o>w')
+vim.keymap.set('i', '<C-b>', '<C-o>b')
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+local function open_nvim_tree()
 
+  require("sfm.api").explorer.toggle()
+end
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
