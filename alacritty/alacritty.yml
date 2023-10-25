@@ -1,0 +1,8 @@
+import: 
+  - ~/.config/alacritty/onedark.yml
+
+
+font:
+    normal:
+      family: UbuntuMono Nerd Font
+    size: 15
